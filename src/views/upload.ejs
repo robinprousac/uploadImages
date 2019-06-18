@@ -8,11 +8,43 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
+        <%- include("partials/navigation") -%>
     
-    <form action="">
-        <input type="text" name="tittle" placeholder="Tittle">
-        <input type="file" name="image">
-    </form>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            
+                            <div class="input-group mb-3">
+                                    <div class="custom-file">
+                                      <input type="file" name="image" class="custom-file-input" id="inputGroupFile02">
+                                      <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                                    </div>
+                               
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="title" placeholder="Title" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description" placeholder="Description" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success btn-block">
+                                    Upload
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 
 </body>
 
